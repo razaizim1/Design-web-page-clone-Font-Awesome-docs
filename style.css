@@ -19,7 +19,7 @@ body {
 
 .container {
     display: grid;
-    grid-template: 70px 50px 800px 500px 50px / repeat(2, 1fr);
+    grid-template: repeat(2, 1fr);
 }
 
 a {
@@ -58,12 +58,12 @@ li {
 }
 
 .logo {
-    font-size: 35px;
     color: var(--text-color);
 }
 
 .logo h2 {
     color: var(--logo-color);
+    font-size: 35px;
 }
 
 span {
@@ -94,26 +94,12 @@ span {
     justify-content: center;
 }
 
-.menu ul li:hover .drop-down > ul {
+.menu ul li:hover .drop-down>ul {
     display: block;
     transition: 0.5s;
 }
 
-/* .drop-down ul li:hover .drop-down2 ul {
-    display: block;
-    transition: 0.5s;
-}
-
-.drop-down2 ul {
-    position: absolute;
-    top: -7px;
-    left: 111px;
-    display: none;
-    background: var(--menu-background);
-    transition: 0.5s;
-} */
-
-.drop-down > ul {
+.drop-down>ul {
     display: none;
     position: absolute;
     top: 25px;
@@ -122,7 +108,8 @@ span {
     transition: 0.5s;
 }
 
-.menu ul li, .btn {
+.menu ul li,
+.btn {
     list-style: none;
     padding: 10px auto;
     margin: 15px;
@@ -158,21 +145,25 @@ span {
     grid-column: span 2;
     grid-row: span 1;
     text-align: center;
-    margin: 100px 0;
+    margin: 5% 0;
 }
 
 .service-box {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .box {
+    flex: 0 0 calc(100% / 4 - 40px);
     border: 2px solid var(--text-color);
     margin: 0 20px;
-    display: flex;
-    flex-direction: column;
     box-sizing: border-box;
     border-radius: 15px;
     cursor: pointer;
+}
+
+.content-area {
+    flex-wrap: wrap;
 }
 
 .box p,
@@ -255,6 +246,7 @@ h3 {
 
 h3 {
     font-weight: 600;
+    font-size: 15px;
 }
 
 .box p {
@@ -287,21 +279,21 @@ h3 {
 /* Contact-Area */
 .contact-section {
     grid-column: span 2;
-    grid-row: span 1;
+    margin: 1% 0px;
 }
 
 .contact-area {
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
-    padding: 40px;
-    width: 75%;
+    justify-content: space-evenly;
+    padding: 4%;
     margin: auto;
     box-shadow: var(--contact-box-shadow);
 }
 
 .contact-form {
     padding-right: 80px;
+    flex-wrap: wrap;
 }
 
 .contact-form h2 {
@@ -353,9 +345,15 @@ textarea::placeholder {
     color: var(--primary-color);
 }
 
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
 /* footer */
 .footer {
     grid-column: span 2;
     grid-row: span 1;
     text-align: center;
+    margin-top: 20px;
 }
